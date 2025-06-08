@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "SvelteKit - Dev",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/apps/crm-app/node_modules/.bin/svelte-kit",
+      "envFile": "${workspaceFolder}/env/.env.development"
+    },
+    {
+      "name": "SvelteKit - Staging",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/apps/crm-app/node_modules/.bin/svelte-kit",
+      "envFile": "${workspaceFolder}/env/.env.staging"
+    },
+    {
+      "name": "SvelteKit - Prod",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/apps/crm-app/node_modules/.bin/svelte-kit",
+      "envFile": "${workspaceFolder}/env/.env.production"
+    }
+  ]
+}

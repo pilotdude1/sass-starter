@@ -1,0 +1,17 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "svelte"
+  ],
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "tailwindCSS.includeLanguages": {
+    "svelte": "html"
+  },
+  "svelte.plugin.typescript.enable": true
+}
