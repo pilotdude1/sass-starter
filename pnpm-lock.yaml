@@ -51,6 +51,9 @@ importers:
       '@testing-library/svelte':
         specifier: ^5.2.4
         version: 5.2.8(svelte@5.33.18)(vite@5.4.19(@types/node@22.15.30)(lightningcss@1.30.1)(terser@5.41.0))(vitest@3.2.2(@types/node@22.15.30)(jsdom@26.1.0)(lightningcss@1.30.1)(terser@5.41.0))
+      '@types/workbox-precaching':
+        specifier: ^5.0.0
+        version: 5.0.0
       autoprefixer:
         specifier: ^10.4.21
         version: 10.4.21(postcss@8.5.4)
@@ -126,6 +129,9 @@ importers:
       vitest:
         specifier: ^3.0.0
         version: 3.2.2(@types/node@22.15.30)(jsdom@26.1.0)(lightningcss@1.30.1)(terser@5.41.0)
+      workbox-precaching:
+        specifier: ^7.3.0
+        version: 7.3.0
 
 packages:
 
@@ -1440,6 +1446,10 @@ packages:
 
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
+
+  '@types/workbox-precaching@5.0.0':
+    resolution: {integrity: sha512-Oytxs/I0nE6oM3p4vJsYyLcLldFb9tyG+WBk+UrL2aWizEdpTeVeV+CYG5/lWBhCyXaiEQPgYzWaf3kzLFZAiQ==}
+    deprecated: This is a stub types definition. workbox-precaching provides its own type definitions, so you do not need this installed.
 
   '@types/ws@8.18.1':
     resolution: {integrity: sha512-ThVF6DCVhA8kUGy+aazFQ4kXQ7E1Ty7A3ypFOe0IcJV8O/M511G99AW24irKrW56Wt44yG9+ij8FaqoBGkuBXg==}
@@ -4900,6 +4910,10 @@ snapshots:
   '@types/resolve@1.20.2': {}
 
   '@types/trusted-types@2.0.7': {}
+
+  '@types/workbox-precaching@5.0.0':
+    dependencies:
+      workbox-precaching: 7.3.0
 
   '@types/ws@8.18.1':
     dependencies:

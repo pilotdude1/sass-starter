@@ -1,6 +1,9 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./src/**/*.{svelte,ts}'],
-	darkMode: 'class',
-	theme: { extend: {} },
+	content: ['./src/**/*.{html,js,svelte,ts}'],
+	theme: {
+		extend: {}
+	},
+	darkMode: 'class', // Enables `dark:` variant
 	plugins: []
 };

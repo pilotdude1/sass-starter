@@ -11,17 +11,20 @@ export default defineConfig({
 			strategies: 'injectManifest',
 			srcDir: 'src',
 
-			// automatically update the SW when new deployment is available
-			registerType: 'autoUpdate',
+			// Inject your custom service worker
+			injectManifest: {
+				swSrc: 'src/service-worker.ts',
+				swDest: 'service-worker.js'
+			},
 
-			// keep SW enabled in dev, but mute globbing warnings
+			// Development options
 			devOptions: {
 				enabled: true,
 				type: 'module',
 				suppressWarnings: true
 			},
 
-			// your web-app manifest
+			// PWA manifest config
 			manifest: {
 				name: 'SASS Starter',
 				short_name: 'SASS',
@@ -33,21 +36,15 @@ export default defineConfig({
 				]
 			},
 
-			// workbox runtime caching settings
+			// Workbox runtime caching
 			workbox: {
 				cleanupOutdatedCaches: true,
 				sourcemap: true
-			},
-
-			// tell Workbox where your authored SW is, and what to output
-			injectManifest: {
-				swSrc: 'src/service-worker.ts', // ← this file must exist
-				swDest: 'service-worker.js' // ← output in your build root
 			}
 		})
 	],
 
-	// allow Vite to serve files from the project root
+	// Optional: Allow Vite to read files outside root
 	server: {
 		fs: {
 			allow: ['.']

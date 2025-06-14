@@ -3,9 +3,6 @@
 	import { registerSW } from 'virtual:pwa-register';
 	import { browser } from '$app/environment';
 
-	let { children } = $props();
-
-	// Register service worker only on client side
 	if (browser) {
 		const updateSW = registerSW({
 			onNeedRefresh() {
@@ -21,12 +18,11 @@
 </script>
 
 <svelte:head>
-	<!-- PWA manifest -->
 	<link rel="manifest" href="/manifest.webmanifest" />
-	<!-- Optional: match your manifest theme_color -->
 	<meta name="theme-color" content="#ffffff" />
 </svelte:head>
 
 <main>
-	{@render children()}
+	<slot />
+	<!-- 🔥 This is how SvelteKit renders child routes -->
 </main>

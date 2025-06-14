@@ -1,16 +1,14 @@
 /// <reference lib="webworker" />
+/// <reference types="vite-plugin-pwa/info" />
 import { precacheAndRoute } from 'workbox-precaching';
-import { registerRoute } from 'workbox-routing';
-import { StaleWhileRevalidate } from 'workbox-strategies';
 
-/**
- * Workbox will replace __WB_MANIFEST with
- * an array of URLs to precache.
- */
-declare let self: ServiceWorkerGlobalScope & { __WB_MANIFEST: any[] };
+declare const self: ServiceWorkerGlobalScope & {
+	__WB_MANIFEST: Array<{ url: string; revision: string | null }>;
+};
 
-// Precache the build’s asset manifest
-precacheAndRoute(self.__WB_MANIFEST);
-
-// (Optional) runtime caching example for images
-registerRoute(({ request }) => request.destination === 'image', new StaleWhileRevalidate());
+// ✅ Prevent crash in dev mode
+if (Array.isArray(self.__WB_MANIFEST)) {
+	precacheAndRoute(self.__WB_MANIFEST);
+} else {
+	console.warn('⚠️ No precache manifest found – likely running in dev mode');
+}
